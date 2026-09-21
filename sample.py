@@ -23,3 +23,7 @@ plt.ylabel('Amplitude')
 plt.grid()
 plt.tight_layout()
 plt.show()
+
+# np.random.randn() - torch.randn()
+# np.random.normal() - torch.normal()
+# np.random.uniform() - torch.rand()
