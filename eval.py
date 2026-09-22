@@ -13,12 +13,17 @@ model.eval()
 
 generator = SignalGenerator()
 
-clean, noisy, t, f = generator.generate()
+clean, noisy, t, f = generator.generate(chunk=128)
+
+print(clean.shape)
+
 noisy_tensor = torch.from_numpy(noisy.astype(np.float32)).unsqueeze(0).to(device)
+
+print(noisy_tensor.shape)
 
 with torch.no_grad():
     pred_tensor = model(noisy_tensor)
-    pred = pred_tensor.cpu().detach().numpy()
+    pred = pred_tensor.cpu().numpy()
 
 plt.figure(figsize=(12, 4))
 plt.plot(t, noisy, label='Noisy', alpha=0.3, color='k')
