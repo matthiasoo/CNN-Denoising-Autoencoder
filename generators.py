@@ -3,7 +3,7 @@ import numpy as np
 class SignalGenerator:
     def __init__(self):
         self.fs = 48000
-        self.f_min = 50
+        self.f_min = 500
         self.f_max = 1000
         self.phase_min = 0.0
         self.phase_max = 2.0
